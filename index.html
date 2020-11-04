@@ -11,10 +11,12 @@
 <body>
     <div id="app">
         <div id = "header-container">
-            <h1>Todo List</h1>
-            <user-add-item :items-list = "items" :add-item-callback = "addItem">
-                <i class="material-icons">add_task</i>
-            </user-add-item>
+            <h1 id="header-text">Todo List</h1>
+            <div id="add-item-container-desktop">
+                <user-add-item :items-list = "items" :add-item-callback = "addItem">
+                    <i class="material-icons">add_task</i>
+                </user-add-item>
+            </div>
         </div>
         <div id="app-body">
             <section v-if = "!allItemsChecked" id = "todo-items-section">
@@ -39,6 +41,11 @@
                     ></done-item>
                 </ul>
             </section>
+        </div>
+        <div id="add-item-container-mobile">
+            <user-add-item :items-list = "items" :add-item-callback = "addItem">
+                <i class="material-icons">add_task</i>
+            </user-add-item>
         </div>
     </div>
     <script src="main.js"></script>

@@ -176,3 +176,40 @@ button:active {
 .done-item-text {
     text-decoration: line-through;
 }
+
+/* Optimisation for Mobile screens */
+
+#add-item-container-mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    #header-container {
+        height: fit-content;
+    }
+
+    #header-text {
+        margin: 0.5rem;
+    }
+
+    #add-item-container-desktop {
+        display: none;
+    }
+
+    #add-item-container {
+        margin: 0.2rem;
+    }
+
+    #add-item-container-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: fit-content;
+        width: 100%;
+
+        background-color: var(--main-color);
+        position: fixed;
+        bottom: 0;
+    }
+}
