@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reynard's Page</title>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue@next"></script>
+    
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <div id = "header-container">
+            <h1>Todo List</h1>
+            <user-add-item :items-list = "items" :add-item-callback = "addItem">
+                <i class="material-icons">add_task</i>
+            </user-add-item>
+        </div>
+        <div id="app-body">
+            <section v-if = "!allItemsChecked" id = "todo-items-section">
+                <h3>Todo items</h3>
+                <ul>
+                    <todo-item 
+                        v-for="item in items" 
+                        :item-obj="item"
+                        :check-item-callback="checkItem"
+                        :remove-item-callback="removeItem"
+                    ></todo-item>
+                </ul>
+            </section>
+            <section v-if = "!allItemsUnchecked" id = "done-items-section">
+                <h3>Done items</h3>
+                <ul>
+                    <done-item 
+                    v-for="item in items" 
+                    :item-obj="item" 
+                    :uncheck-item-callback="uncheckItem"
+                    :remove-item-callback="removeItem"
+                    ></done-item>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
