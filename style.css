@@ -212,4 +212,8 @@ button:active {
         position: fixed;
         bottom: 0;
     }
+
+    #app-body {
+        margin-bottom: 7rem;
+    }
 }
