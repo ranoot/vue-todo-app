@@ -221,7 +221,7 @@ button:active {
         align-items: center;
         justify-content: center;
 
-        height: 6rem;
+        height: auto;
         width: 100%;
 
         background-color: var(--main-color);
