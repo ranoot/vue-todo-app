@@ -15,13 +15,18 @@
     padding: 0px;
 }
 
-body {
+html {
     overflow-x: hidden;
+}
+
+.red-text {
+    color: red;
 }
 
 ul {
     list-style: none;
     width: 100%;
+    max-width: 100%;
 }
 
 p {
@@ -167,10 +172,12 @@ button:active {
 .todo-item-text, .done-item-text {
     padding: 5px;
     margin: 5px;
+
+    overflow-wrap: break-word;
 }
 
 .todo-item-text-container, .done-item-text-container {
-    overflow-wrap: break-word;
+    max-width: 80%;
 }
 
 .check-button {

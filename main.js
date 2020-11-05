@@ -113,7 +113,8 @@ app.component("user-add-item", {
                 "Go for a walk...",
                 "Read a book...",
                 "Go catch a fish..."
-            ]
+            ],
+            currentRandomItem: undefined
         }
     },
     methods: {
@@ -124,15 +125,21 @@ app.component("user-add-item", {
         addInputValueToItems() {
             this.addItemCallback({
                 id: this.getId(this.itemsList),
-                itemName: this.inputValue,
+                itemName: (this.inputValue.replace(/[\n\r]/g, '') === "" ? this.currentRandomItem : this.inputValue),
                 checked: false,
             });
             this.inputValue = "";
+            this.getRandomTodoItem();
         },
         getRandomTodoItem() {
             const options = this.randomTodoItems;
-            return options[Math.floor(Math.random() * options.length)];
+            const randomItem = options[Math.floor(Math.random() * options.length)];
+            this.currentRandomItem = randomItem;
+            return randomItem;
         }
+    },
+    mounted() {
+        this.getRandomTodoItem();
     },
     template: `
     <div id="add-item-container">
@@ -140,7 +147,7 @@ app.component("user-add-item", {
         v-model="inputValue" 
         @keyup.enter="addInputValueToItems" 
         id="add-item-text-input"
-        :placeholder="getRandomTodoItem()"
+        :placeholder="currentRandomItem"
     ></textarea>
     <button 
         @click="addInputValueToItems" 
