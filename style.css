@@ -146,7 +146,7 @@ button:active {
     justify-content: center;
     flex-direction: column;
 
-    margin-top: 7rem;
+    margin-top: 6rem;
 }
 
 #todo-items-section, #done-items-section {
@@ -201,7 +201,7 @@ button:active {
 
 @media screen and (max-width: 768px) {
     #header-container {
-        height: fit-content;
+        height: 6rem;
     }
 
     #header-text {
@@ -221,7 +221,7 @@ button:active {
         align-items: center;
         justify-content: center;
 
-        height: fit-content;
+        height: 6rem;
         width: 100%;
 
         background-color: var(--main-color);
@@ -230,6 +230,6 @@ button:active {
     }
 
     #app-body {
-        margin-bottom: 7rem;
+        margin-bottom: 6rem;
     }
 }
